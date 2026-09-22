@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Home Management Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- ============================= -->
+        <!-- SIDEBAR -->
+        <!-- ============================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo-section">
+
+                <div class="logo-icon">
+                    🏠
+                </div>
+
+                <div>
+                    <h2>Home Assistant</h2>
+                    <p>Daily Management</p>
+                </div>
+
+            </div>
+
+
+            <button class="new-chat-btn"
+                    onclick="newChat()">
+
+                <span>＋</span>
+                New Chat
+
+            </button>
+
+
+            <div class="sidebar-section">
+
+                <h3>Quick Questions</h3>
+
+                <button class="quick-question"
+                        onclick="askQuickQuestion('What are my pending family tasks?')">
+
+                    📋 Pending Tasks
+
+                </button>
+
+                <button class="quick-question"
+                        onclick="askQuickQuestion('How much was the electricity bill in June?')">
+
+                    ⚡ Electricity Bill
+
+                </button>
+
+                <button class="quick-question"
+                        onclick="askQuickQuestion('How much did we spend on groceries?')">
+
+                    🛒 Grocery Expenses
+
+                </button>
+
+                <button class="quick-question"
+                        onclick="askQuickQuestion('Tell me about my monthly expenses.')">
+
+                    💰 Monthly Expenses
+
+                </button>
+
+            </div>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    <span>Assistant Online</span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ============================= -->
+        <!-- MAIN CHAT AREA -->
+        <!-- ============================= -->
+
+        <main class="chat-area">
+
+            <!-- HEADER -->
+
+            <header class="chat-header">
+
+                <div class="assistant-info">
+
+                    <div class="assistant-avatar">
+                        🏠
+                    </div>
+
+                    <div>
+
+                        <h1>Daily Home Management Assistant</h1>
+
+                        <p>
+                            Your smart household companion
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CHAT MESSAGES -->
+
+            <section id="chatMessages"
+                     class="chat-messages">
+
+                <div class="welcome-message">
+
+                    <div class="welcome-icon">
+                        🏡
+                    </div>
+
+                    <h2>
+                        Welcome Home!
+                    </h2>
+
+                    <p>
+                        I can help you manage household
+                        expenses, bills, groceries and family tasks.
+                    </p>
+
+                    <div class="suggestions">
+
+                        <button onclick="askQuickQuestion(
+                            'What are my pending family tasks?'
+                        )">
+                            📋 Pending tasks
+                        </button>
+
+                        <button onclick="askQuickQuestion(
+                            'How much was the electricity bill in June?'
+                        )">
+                            ⚡ Electricity bill
+                        </button>
+
+                        <button onclick="askQuickQuestion(
+                            'How much did we spend on groceries?'
+                        )">
+                            🛒 Grocery expenses
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- TYPING INDICATOR -->
+
+            <div id="typingIndicator"
+                 class="typing-indicator hidden">
+
+                <div class="bot-small-avatar">
+                    🏠
+                </div>
+
+                <div class="typing-dots">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- INPUT AREA -->
+
+            <div class="input-container">
+
+                <div class="input-box">
+
+                    <textarea
+                        id="userInput"
+                        placeholder="Ask about expenses, bills, groceries or tasks..."
+                        rows="1"></textarea>
+
+                    <button id="sendButton"
+                            onclick="sendMessage()">
+
+                        ➤
+
+                    </button>
+
+                </div>
+
+                <p class="input-note">
+                    AI responses are based on your household documents.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
