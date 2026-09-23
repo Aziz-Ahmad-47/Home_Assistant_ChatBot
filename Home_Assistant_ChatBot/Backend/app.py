@@ -1,6 +1,6 @@
 import streamlit as st
 from rag.chat import ask_home_assistant
-
+st.write("Secret found:", "GROQ_API_KEY" in st.secrets)
 # --------------------------------------------------
 # PAGE CONFIG
 # --------------------------------------------------
