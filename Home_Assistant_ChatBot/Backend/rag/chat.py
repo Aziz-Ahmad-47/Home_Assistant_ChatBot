@@ -1,8 +1,7 @@
-import streamlit as st
 import os
 from pathlib import Path
 
-from dotenv import load_dotenv
+import streamlit as st
 from groq import Groq
 
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -13,15 +12,10 @@ from langchain_community.vectorstores import FAISS
 # CONFIGURATION
 # =========================================================
 
-load_dotenv()
-
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-
-if not GROQ_API_KEY:
-    try:
-        GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
-    except Exception:
-        GROQ_API_KEY = None
+try:
+    GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+except Exception:
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 if not GROQ_API_KEY:
     raise ValueError("GROQ_API_KEY is not configured")
